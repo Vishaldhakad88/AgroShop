@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../components/Hero";
 import ProblemSolution from "../components/ProblemSolution";
+import Timer from "../components/Timer";
 import ModulesList from "../components/ModulesList";
 import WhoCanJoin from "../components/WhoCanJoin";
 import PriceBlock from "../components/PriceBlock";
@@ -13,6 +14,7 @@ const Home = () => {
     <div>
       <Hero />
       <ProblemSolution />
+      <Timer />
       <ModulesList />
       <WhoCanJoin />
       <PriceBlock />
