@@ -77,17 +77,18 @@ export default function SpecialOffer() {
           ))}
         </div>
 
-        {/* CTA Button */}
-        <div className="text-center">
-          <button
-            onClick={handleEnroll}
-            className="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-green-600 hover:bg-green-700 text-white font-bold text-lg rounded-full shadow-lg transition-all duration-200 hover:shadow-xl active:scale-95"
-          >
-            अभी Enroll करें
-            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            <span className="ml-1 text-base font-medium">– Instant Access पाएँ</span>
-          </button>
-        </div>
+       {/* CTA Button */}
+<div className="text-center">
+  <button
+    onClick={handleEnroll}
+    className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-10 py-3 sm:py-4 bg-green-600 hover:bg-green-700 text-white font-bold text-base sm:text-lg rounded-full shadow-lg transition-all duration-200 hover:shadow-xl active:scale-95"
+  >
+    अभी Enroll करें
+    <ArrowRight className="w-5 sm:w-6 h-5 sm:h-6 group-hover:translate-x-1 transition-transform" />
+    <span className="ml-1 text-xs sm:text-base font-medium">– Instant Access पाएँ</span>
+  </button>
+</div>
+
 
         {/* Footer note */}
         <p className="mt-6 text-center text-sm text-gray-500 flex items-center justify-center gap-1">
