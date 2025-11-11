@@ -17,7 +17,7 @@ export default function ModuleCard({ module, index }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: module.id * 0.1 }}
       style={{
-        background: "linear-gradient(135deg, rgba(0,255,0,0.2), rgba(0,255,255,0.2), rgba(255, 208, 0, 0.2))",
+        background: "linear-gradient(135deg, rgba(166, 224, 166, 0.2), rgba(184, 212, 212, 0.2), rgba(190, 185, 155, 0.2))",
       }}
     >
       <div className="flex items-center mb-4">

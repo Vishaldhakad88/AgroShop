@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiPlus } from "react-icons/fi";
 
 const FAQAccordion = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -28,33 +30,47 @@ const FAQAccordion = () => {
 
   return (
     <section className="py-16 bg-green-50" id="faq">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-green-800 text-center mb-10">
           सामान्य प्रश्न (FAQ)
         </h2>
 
         <div className="space-y-4">
           {faqs.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white rounded-xl shadow-sm border border-green-100"
+              className="bg-white rounded-xl shadow-sm border border-green-100 hover:shadow-md transition-all duration-300"
+              layout
             >
               <button
                 onClick={() => toggleAccordion(index)}
                 className="w-full flex justify-between items-center text-left px-5 py-4 font-semibold text-gray-800 focus:outline-none"
               >
-                <span>{item.q}</span>
-                <span className="text-green-600 text-2xl font-bold">
-                  {openIndex === index ? "−" : "+"}
-                </span>
+                <span className="text-sm sm:text-base md:text-lg">{item.q}</span>
+                <motion.div
+                  animate={{ rotate: openIndex === index ? 45 : 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="text-green-600 text-2xl flex items-center"
+                >
+                  <FiPlus />
+                </motion.div>
               </button>
 
-              {openIndex === index && (
-                <div className="px-5 pb-4 text-gray-700 border-t border-green-100 animate-fadeIn">
-                  {item.a}
-                </div>
-              )}
-            </div>
+              <AnimatePresence initial={false}>
+                {openIndex === index && (
+                  <motion.div
+                    key="content"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="px-5 pb-4 text-gray-700 text-sm sm:text-base border-t border-green-100 overflow-hidden"
+                  >
+                    {item.a}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
         </div>
       </div>
